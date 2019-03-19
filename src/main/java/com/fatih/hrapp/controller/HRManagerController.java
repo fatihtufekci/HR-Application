@@ -19,11 +19,6 @@ public class HRManagerController {
 		return "home";
 	}
 	
-//	@RequestMapping("/login")
-//	public String login() {
-//		return "login";
-//	}
-	
 	@RequestMapping("/")
 	public ModelAndView index() {
 		ModelAndView m = new ModelAndView();
