@@ -22,18 +22,22 @@
 		<div class="form-group">
 			<label for="name">Name</label>
 			<form:input path="name" class="form-control" id="name" />
+			<form:errors path="name"  cssStyle="color:red"/>
 		</div>
 		<div class="form-group">
 			<label for="email">Email</label>
 			<form:input path="email" class="form-control" id="email" />
+			<form:errors path="email" cssStyle="color:red"/>
 		</div>
 		<div class="form-group">
 			<label for="phone">Phone</label>
 			<form:input path="phone" class="form-control" id="phone" />
+			<form:errors path="phone" cssStyle="color:red"/>
 		</div>
 		<div class="form-group">
 			<label for="thoughtsOnJob">Thoughts on Job</label>
 			<form:input path="thoughtsOnJob" class="form-control" id="thoughtsOnJob" />
+			<form:errors path="thoughtsOnJob" cssStyle="color:red"/>
 		</div>
 		<form:button name="submit" class="btn btn-primary">Create</form:button>
 	</form:form>

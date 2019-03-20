@@ -1,14 +1,16 @@
 package com.fatih.hrapp.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fatih.hrapp.model.Applicant;
-import com.fatih.hrapp.model.JobListing;
 import com.fatih.hrapp.service.ApplicantService;
 import com.fatih.hrapp.service.JobListingService;
 
@@ -39,7 +41,10 @@ public class ApplicantController {
 	}
 	
 	@RequestMapping(value="/newJobApplication", method=RequestMethod.POST)
-	public String handleFormApplicant(@ModelAttribute Applicant applicant) {
+	public String handleFormApplicant(@ModelAttribute @Valid Applicant applicant, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()) {
+			return "newJobApplication";
+		}
 		applicantService.createApplicant(applicant);
 		return "redirect:/";
 	}

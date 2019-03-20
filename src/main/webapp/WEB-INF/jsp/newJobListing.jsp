@@ -28,15 +28,18 @@
 		<div class="form-group">
 			<label for="jobTitle">Job Title</label>
 			<form:input path="jobTitle" class="form-control" id="jobTitle" />
+			<form:errors path="jobTitle" cssStyle="color:red"/>
 		</div><div class="form-group">
 			<label for="jobDescription">Job Description</label>
 			<form:input path="jobDescription" class="form-control" id="jobDescription" />
+			<form:errors path="jobDescription" cssStyle="color:red"/>
 		</div><div class="form-group">
 			<label for="numberOfPeopleToHire">Number Of People To Hire</label>
 			<form:input path="numberOfPeopleToHire" class="form-control" id="numberOfPeopleToHire" />
 		</div><div class="form-group">
 			<label for="lastApplicationDate">Last Application Date</label>
 			<form:input path="lastApplicationDate" class="form-control" id="lastApplicationDate" />
+			<form:errors path="lastApplicationDate" cssStyle="color:red"/>
 		</div>
 		<form:button name="submit" class="btn btn-primary">Create</form:button>
 	</form:form>

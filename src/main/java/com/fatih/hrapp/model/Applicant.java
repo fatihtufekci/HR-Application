@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Applicant {
@@ -11,9 +12,17 @@ public class Applicant {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
+	@NotEmpty
 	private String name;
+	
+	@NotEmpty
 	private String email;
+	
+	@NotEmpty
 	private String phone;
+	
+	@NotEmpty
 	private String thoughtsOnJob;
 	
 	public Applicant() { }
