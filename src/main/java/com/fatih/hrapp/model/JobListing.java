@@ -1,9 +1,12 @@
 package com.fatih.hrapp.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -24,8 +27,16 @@ public class JobListing {
 	@NotEmpty
 	private String lastApplicationDate;
 	
+	//@ManyToMany(mappedBy="jobListings", cascade=CascadeType.ALL)
+	@ManyToMany(mappedBy="jobListings")
+	private List<Applicant> applicant; 
+	
 	public JobListing() { }
-
+	
+	public void addApplicant(Applicant applicant) {
+		this.applicant.add(applicant);
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -65,5 +76,12 @@ public class JobListing {
 	public void setLastApplicationDate(String lastApplicationDate) {
 		this.lastApplicationDate = lastApplicationDate;
 	}
-	
+
+	public List<Applicant> getApplicant() {
+		return applicant;
+	}
+
+	public void setApplicant(List<Applicant> applicant) {
+		this.applicant = applicant;
+	}
 }

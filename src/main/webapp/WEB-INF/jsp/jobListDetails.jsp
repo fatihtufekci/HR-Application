@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>HR Manager Home Page</title>
+<title>Job Listing Details</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -24,36 +24,27 @@
 		</li>
 	</ul>
 	<br/>
-	<c:if test="${not empty message}">
-		<div style="color:blue">
-			${message}
-		</div>
-	</c:if>
 	<br/>
 	<table class="table">
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
-				<th scope="col">Job Title</th>
-				<th scope="col">Job Description</th>
-				<th scope="col">Number of People to Hire</th>
-				<th scope="col">Last Application Date</th>
-				<th scope="col"></th>
-				<th scope="col"></th>
-				<th scope="col"></th>
+				<th scope="col">Name</th>
+				<th scope="col">E-mail</th>
+				<th scope="col">Phone</th>
+				<th scope="col">Thoughts On Job</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${jobListings}" var="jobListing" varStatus="status">
-				<tr bgcolor="${status.index % 2 == 0 ? 'white' : 'lightgray'}">
-					<td>${jobListing.jobTitle}</td>
-					<td>${jobListing.jobDescription}</td>
-					<td>${jobListing.numberOfPeopleToHire}</td>
-					<td>${jobListing.lastApplicationDate}</td>
-					<td><a href="/home/details/${jobListing.id}">Show Detail</></a></td>
-					<td><a href="/home/update/${jobListing.id}">Edit</></a></td>
-					<td><a href="/home/delete/${jobListing.id}">Delete</></a></td>
-				</tr>
-			</c:forEach>
+		  	<c:if test="${not empty jobListings}">
+				<c:forEach items="${jobListings}" var="jobListing" varStatus="status">
+					<tr bgcolor="${status.index % 2 == 0 ? 'white' : 'lightgray'}">
+						<td>${jobListing.name}</td>
+						<td>${jobListing.email}</td>
+						<td>${jobListing.phone}</td>
+						<td>${jobListing.thoughtsOnJob}</td>
+					</tr>
+				</c:forEach>
+			</c:if>
 		</tbody>
 	</table>
 	<br/>

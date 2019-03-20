@@ -1,9 +1,12 @@
 package com.fatih.hrapp.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -25,7 +28,14 @@ public class Applicant {
 	@NotEmpty
 	private String thoughtsOnJob;
 	
+	@ManyToMany
+	private List<JobListing> jobListings; 
+	
 	public Applicant() { }
+	
+	public void addJobListing(JobListing jobListings) {
+		this.jobListings.add(jobListings);
+	}
 	
 	public int getId() {
 		return id;
@@ -56,6 +66,12 @@ public class Applicant {
 	}
 	public void setThoughtsOnJob(String thoughtsOnJob) {
 		this.thoughtsOnJob = thoughtsOnJob;
+	}
+	public List<JobListing> getJobListings() {
+		return jobListings;
+	}
+	public void setJobListings(List<JobListing> jobListings) {
+		this.jobListings = jobListings;
 	}
 	
 }

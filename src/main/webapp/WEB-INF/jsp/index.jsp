@@ -30,10 +30,10 @@
 	<table class="table">
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
-				<th scope="col">jobTitle</th>
-				<th scope="col">jobDescription</th>
-				<th scope="col">numberOfPeopleToHire</th>
-				<th scope="col">lastApplicationDate</th>
+				<th scope="col">Job Title</th>
+				<th scope="col">Job Description</th>
+				<th scope="col">Number Of People to Hire</th>
+				<th scope="col">Last Application Date</th>
 				<th scope="col"></th>
 			</tr>
 		</thead>
@@ -44,7 +44,7 @@
 					<td>${jobListing.jobDescription}</td>
 					<td>${jobListing.numberOfPeopleToHire}</td>
 					<td>${jobListing.lastApplicationDate}</td>
-					<td><a href="/newJobApplication">Apply</></a></td>
+					<td><a href="/newJobApplication/${jobListing.id}">Apply</></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

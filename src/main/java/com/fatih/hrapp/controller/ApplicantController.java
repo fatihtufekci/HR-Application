@@ -15,39 +15,39 @@ import com.fatih.hrapp.model.Applicant;
 import com.fatih.hrapp.service.ApplicantService;
 import com.fatih.hrapp.service.JobListingService;
 
-@Controller
+//@Controller
 public class ApplicantController {
 	
-	@Autowired
-	private ApplicantService applicantService;
-	@Autowired
-	private JobListingService jobListingsService;
-	
-	@RequestMapping("/")
-	public ModelAndView index() {
-		ModelAndView m = new ModelAndView();
-		m.addObject("jobListings", jobListingsService.findAllJobListing());
-		m.setViewName("index");
-		return m;
-	}
-	
-	@RequestMapping(value="/newJobApplication", method=RequestMethod.GET)
-	public String newJobApplication() {
-		return "newJobApplication";
-	}
-	
-	@ModelAttribute
-	public Applicant initModel() {
-		return new Applicant();
-	}
-	
-	@RequestMapping(value="/newJobApplication", method=RequestMethod.POST)
-	public String handleFormApplicant(@ModelAttribute @Valid Applicant applicant, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-		if(bindingResult.hasErrors()) {
-			return "newJobApplication";
-		}
-		applicantService.createApplicant(applicant);
-		redirectAttributes.addFlashAttribute("message", "Applicant created with id: " + applicant.getId());
-		return "redirect:/";
-	}
+//	@Autowired
+//	private ApplicantService applicantService;
+//	@Autowired
+//	private JobListingService jobListingsService;
+//	
+//	@RequestMapping("/")
+//	public ModelAndView index() {
+//		ModelAndView m = new ModelAndView();
+//		m.addObject("jobListings", jobListingsService.findAllJobListing());
+//		m.setViewName("index");
+//		return m;
+//	}
+//	
+//	@RequestMapping(value="/newJobApplication", method=RequestMethod.GET)
+//	public String newJobApplication() {
+//		return "newJobApplication";
+//	}
+//	
+//	@ModelAttribute
+//	public Applicant initModel() {
+//		return new Applicant();
+//	}
+//	
+//	@RequestMapping(value="/newJobApplication", method=RequestMethod.POST)
+//	public String handleFormApplicant(@ModelAttribute @Valid Applicant applicant, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+//		if(bindingResult.hasErrors()) {
+//			return "newJobApplication";
+//		}
+//		applicantService.createApplicant(applicant);
+//		redirectAttributes.addFlashAttribute("message", "Applicant created with id: " + applicant.getId());
+//		return "redirect:/";
+//	}
 }
