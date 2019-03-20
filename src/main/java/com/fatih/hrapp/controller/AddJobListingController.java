@@ -5,29 +5,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.fatih.hrapp.model.JobListing;
 import com.fatih.hrapp.service.JobListingService;
 
 @Controller
-public class HRManagerController {
+public class AddJobListingController {
 	
 	@Autowired
 	private JobListingService jobListingsService;
 	
-	@RequestMapping("/home")
-	public ModelAndView home() {
-		ModelAndView m = new ModelAndView();
-		m.addObject("jobListings", jobListingsService.findAllJobListing());
-		m.setViewName("home");
-		return m;
+	@RequestMapping(value="/newJobListing", method=RequestMethod.GET)
+	public String newJobApplication() {
+		return "newJobListing";
 	}
 	
-	@RequestMapping("/login.html")
-	public ModelAndView login() {
-		ModelAndView m = new ModelAndView();
-		m.setViewName("login");
-		return m;
+	@ModelAttribute
+	public JobListing initModel() {
+		return new JobListing();
+	}
+	
+	@RequestMapping(value="/newJobListing", method=RequestMethod.POST)
+	public String handleFormJobListing(@ModelAttribute JobListing jobListing) {
+		jobListingsService.createJobListing(jobListing);
+		return "redirect:/home";
 	}
 }

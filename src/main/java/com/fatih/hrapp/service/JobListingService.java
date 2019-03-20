@@ -8,6 +8,7 @@ public interface JobListingService {
 	
 	void createJobListing(JobListing jobListing);
 	void deleteJobListing(int id);
-	List<JobListing> findJobListing();
+	List<JobListing> findAllJobListing();
 	void updateJobListing(JobListing jobListing);
+	JobListing findJobListing(int id);
 }

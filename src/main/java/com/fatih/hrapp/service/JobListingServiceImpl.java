@@ -29,13 +29,18 @@ public class JobListingServiceImpl implements JobListingService{
 	}
 
 	@Override
-	public List<JobListing> findJobListing() {
+	public List<JobListing> findAllJobListing() {
 		return (List<JobListing>)jobListingRepository.findAll();
 	}
 
 	@Override
 	public void updateJobListing(JobListing jobListing) {
 		jobListingRepository.save(jobListing);
+	}
+
+	@Override
+	public JobListing findJobListing(int id) {
+		return jobListingRepository.findById(id).get();
 	}
 
 }
