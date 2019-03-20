@@ -24,7 +24,12 @@
 		</li>
 	</ul>
 	<br/>
-	
+	<c:if test="${not empty message}">
+		<div style="color:blue">
+			${message}
+		</div>
+	</c:if>
+	<br/>
 	<table class="table">
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
@@ -51,6 +56,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<br/>
 	
 </div>
 	
