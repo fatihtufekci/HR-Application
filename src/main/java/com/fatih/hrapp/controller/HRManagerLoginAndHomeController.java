@@ -11,7 +11,7 @@ import com.fatih.hrapp.model.JobListing;
 import com.fatih.hrapp.service.JobListingService;
 
 @Controller
-public class HRManagerController {
+public class HRManagerLoginAndHomeController {
 	
 	@Autowired
 	private JobListingService jobListingsService;

@@ -12,9 +12,9 @@
 <body>
 <div class="container">
 	<ul class="nav nav-tabs">
-		<li class="nav-item"><a class="nav-link active" href="/newJobListing">Add Job Listing</a>
+		<li class="nav-item"><a class="nav-link active" href="/home">HR Manager Home Page</a>
 		</li>
-		<li class="nav-item"><a class="nav-link active" href="/">Index Page</a>
+		<li class="nav-item"><a class="nav-link active" href="/">Job Listings</a>
 		</li>
 		<li class="nav-item">
 			<form action="logout" method="post">
@@ -26,6 +26,7 @@
 	<br/>
 	<br/>
 	<table class="table">
+		<caption>Applications</caption>
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
 				<th scope="col">Name</th>

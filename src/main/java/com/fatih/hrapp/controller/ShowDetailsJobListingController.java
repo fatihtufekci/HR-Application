@@ -20,12 +20,9 @@ public class ShowDetailsJobListingController {
 	public ModelAndView home(@PathVariable int id) {
 		ModelAndView m = new ModelAndView();
 		JobListing j = jobListingsService.findJobListing(id);
-		if(j.getApplicant()==null) {
-			System.err.println("Null");
-		}else {
+		if(j.getApplicant()!=null) {
 			m.addObject("jobListings", j.getApplicant());
 		}
-		//m.addObject("jobListings", j.getApplicant());
 		m.setViewName("jobListDetails");
 		return m;
 	}

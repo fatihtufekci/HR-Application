@@ -15,6 +15,11 @@
 
 <body>
 <div class="container">
+	<ul class="nav nav-tabs">
+		<li class="nav-item"><a class="nav-link active" href="/">Job Listings</a>
+		</li>
+	</ul>
+	<br/>
     <h2>Please Login</h2>
     <form action="login" method="POST" id="loginForm" class="cssform" autocomplete="off">
         <div class="form-group">

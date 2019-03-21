@@ -15,9 +15,7 @@
 <body>
 <div class="container">
 	<ul class="nav nav-tabs">
-		<li class="nav-item"><a class="nav-link active" href="/home">Add Job Listing</a>
-		</li>
-		<li class="nav-item"><a class="nav-link active" href="/">Index Page</a>
+		<li class="nav-item"><a class="nav-link active" href="/home">HR Manager Home Page</a>
 		</li>
 	</ul>
 	<br/>
@@ -28,6 +26,7 @@
 	</c:if>
 	<br/>
 	<table class="table">
+		<caption>Job Listings</caption>
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
 				<th scope="col">Job Title</th>

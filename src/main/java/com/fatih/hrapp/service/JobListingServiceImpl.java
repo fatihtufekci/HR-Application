@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fatih.hrapp.dao.JobListingRepository;
+import com.fatih.hrapp.exception.JobListingNotFoundException;
 import com.fatih.hrapp.model.JobListing;
 
 @Service
@@ -39,8 +40,12 @@ public class JobListingServiceImpl implements JobListingService{
 	}
 
 	@Override
-	public JobListing findJobListing(int id) {
-		return jobListingRepository.findById(id).get();
+	public JobListing findJobListing(int id) throws JobListingNotFoundException {
+		JobListing j = jobListingRepository.findById(id).get();
+		if(j==null) {
+			throw new JobListingNotFoundException("JobListing  Not Found..!!");
+		}
+		return j;
 	}
 
 }
