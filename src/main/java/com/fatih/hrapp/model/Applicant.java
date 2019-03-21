@@ -7,7 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Applicant {
@@ -16,16 +18,18 @@ public class Applicant {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@NotEmpty
+	@NotEmpty(message="can't be empty value")
 	private String name;
 	
-	@NotEmpty
+	@NotEmpty(message="can't be empty value")
+	@Email(message = "incorrect email")
 	private String email;
 	
-	@NotEmpty
+	@NotEmpty(message="can't be empty value")
+	@Pattern(regexp ="[0-9\\s]{12}", message="Incorrect Phone")
 	private String phone;
 	
-	@NotEmpty
+	@NotEmpty(message="can't be empty value")
 	private String thoughtsOnJob;
 	
 	@ManyToMany
