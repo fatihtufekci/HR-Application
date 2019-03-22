@@ -14,18 +14,22 @@
 </head>
 <body>
 <div class="container">
-	<ul class="nav nav-tabs">
+	<div class="row">
+		<ul class="nav nav-tabs">
 		<li class="nav-item"><a class="nav-link active" href="/home">HR Manager Home Page</a>
 		</li>
 	</ul>
+	</div>
 	<br/>
-	<c:if test="${not empty message}">
+	<br/>
+	<div class="row">
+		<c:if test="${not empty message}">
 		<div style="color:blue">
 			${message}
 		</div>
 	</c:if>
 	<br/>
-	<table class="table">
+	<table class="table table-striped table-hover">
 		<caption>Job Listings</caption>
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
@@ -38,7 +42,7 @@
 		</thead>
 		<tbody>
 			<c:forEach items="${jobListings}" var="jobListing" varStatus="status">
-				<tr bgcolor="${status.index % 2 == 0 ? 'white' : 'lightgray'}">
+				<tr>
 					<td>${jobListing.jobTitle}</td>
 					<td>${jobListing.jobDescription}</td>
 					<td>${jobListing.numberOfPeopleToHire}</td>
@@ -48,6 +52,8 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	</div>
+	
 	<br/>
 	
 </div>

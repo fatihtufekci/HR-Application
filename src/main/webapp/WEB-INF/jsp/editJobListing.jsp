@@ -24,6 +24,7 @@
 		</li>
 	</ul>
 	<br/>
+	<div class="col-md-6">
 	<form:form modelAttribute="jobListing" method="post">
 		<div class="form-group">
 			<label for="jobTitle">Job Title</label>
@@ -41,8 +42,9 @@
 			<form:input path="lastApplicationDate" class="form-control" id="lastApplicationDate" />
 			<form:errors path="lastApplicationDate" cssStyle="color:red"/>
 		</div>
-		<form:button name="submit" class="btn btn-primary">Create</form:button>
+		<form:button name="submit" class="btn btn-primary">Update</form:button>
 	</form:form>
+	</div>
 	<br/>
 </div>
 

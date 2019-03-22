@@ -24,6 +24,7 @@
 		</li>
 	</ul>
 	<br/>
+	<div class="col-md-6">
 	<form:form modelAttribute="jobListing" method="post">
 		<div class="form-group">
 			<label for="jobTitle">Job Title</label>
@@ -35,15 +36,15 @@
 			<form:errors path="jobDescription" cssStyle="color:red"/>
 		</div><div class="form-group">
 			<label for="numberOfPeopleToHire">Number Of People To Hire</label>
-			<form:input path="numberOfPeopleToHire" class="form-control" id="numberOfPeopleToHire" />
+			<form:input path="numberOfPeopleToHire" class="form-control" id="numberOfPeopleToHire"/>
 		</div><div class="form-group">
 			<label for="lastApplicationDate">Last Application Date</label>
-			<form:input path="lastApplicationDate" class="form-control" id="lastApplicationDate" />
+			<form:input path="lastApplicationDate" class="form-control" id="lastApplicationDate" placeholder="YYYY-MM-DD"/>
 			<form:errors path="lastApplicationDate" cssStyle="color:red"/>
 		</div>
 		<form:button name="submit" class="btn btn-primary">Create</form:button>
 	</form:form>
-	
+	</div>
 </div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

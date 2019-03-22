@@ -30,7 +30,7 @@
 		</div>
 	</c:if>
 	<br/>
-	<table class="table">
+	<table class="table table-hover">
 		<thead class="thead-dark">
 			<tr style="font-weight: bold;" bgcolor="lightblue">
 				<th scope="col">Job Title</th>
